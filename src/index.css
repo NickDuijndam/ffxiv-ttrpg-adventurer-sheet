@@ -331,6 +331,128 @@ button.danger {
   min-height: 360px;
 }
 
+.trait-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.trait-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  justify-content: flex-end;
+  margin-bottom: 0.35rem;
+}
+
+.resource-count-input {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+}
+
+.resource-count-input span {
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+
+.resource-count-input input {
+  width: 4rem;
+  border: 1px solid var(--line-soft);
+  background: var(--paper);
+  color: var(--ink);
+  padding: 0.2rem 0.28rem;
+  font-family: var(--body);
+  font-size: 0.8rem;
+}
+
+.trait-card {
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--paper) 90%, #fff 10%);
+}
+
+.trait-head {
+  display: grid;
+  grid-template-columns: 86px 1.4fr 1fr auto;
+  border-bottom: 1px solid var(--line-soft);
+  background: color-mix(in srgb, var(--paper-shadow) 45%, var(--paper) 55%);
+}
+
+.trait-level,
+.trait-name,
+.trait-type {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 0.25rem;
+  min-height: 2.1rem;
+  padding: 0.2rem 0.35rem;
+  border-right: 1px solid var(--line-soft);
+}
+
+.trait-type {
+  border-right: 1px solid var(--line-soft);
+}
+
+.trait-level span,
+.trait-name span,
+.trait-type span {
+  font-size: 0.74rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.trait-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.35rem;
+}
+
+.trait-resource-marks {
+  display: flex;
+  align-items: center;
+  gap: 0.14rem;
+}
+
+.resource-mark {
+  width: 1.35rem;
+  height: 1.35rem;
+  padding: 0;
+  border: 1px solid var(--line);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  line-height: 1;
+}
+
+.resource-mark.checked {
+  background: color-mix(in srgb, var(--line) 20%, var(--paper) 80%);
+}
+
+.trait-remove {
+  padding: 0.22rem 0.45rem;
+  font-size: 0.74rem;
+}
+
+.trait-description {
+  padding: 0.2rem 0.25rem 0.3rem;
+}
+
+.trait-description .rte-toolbar {
+  margin-bottom: 0.18rem;
+}
+
+.trait-description .rte-toolbar button {
+  min-width: 1.7rem;
+  padding: 0.18rem 0.32rem;
+  font-size: 0.68rem;
+}
+
 .items-box {
   border-top: 1px solid var(--line);
   margin-top: 0.45rem;
@@ -339,9 +461,16 @@ button.danger {
 
 .item-table {
   display: grid;
-  grid-template-columns: 2fr 0.6fr 2.1fr;
+  grid-template-columns: 2fr 0.6fr 2.1fr 0.9fr;
   border-top: 1px solid var(--line-soft);
   border-left: 1px solid var(--line-soft);
+}
+
+.item-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.25rem;
 }
 
 .item-head,
@@ -363,12 +492,106 @@ button.danger {
   padding: 0.1rem 0.2rem;
 }
 
-.abilities-panel {
-  min-height: 860px;
+.item-action-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.abilities-textarea {
-  min-height: 820px;
+.item-remove {
+  padding: 0.2rem 0.4rem;
+  font-size: 0.72rem;
+}
+
+.abilities-sections {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+}
+
+.ability-section {
+  background: color-mix(in srgb, var(--paper) 94%, #fff 6%);
+}
+
+.ability-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  justify-content: flex-end;
+  margin-bottom: 0.35rem;
+}
+
+.ability-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.45rem;
+}
+
+.ability-card {
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--paper) 90%, #fff 10%);
+}
+
+.ability-head {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr auto;
+  border-bottom: 1px solid var(--line-soft);
+  background: color-mix(in srgb, var(--paper-shadow) 45%, var(--paper) 55%);
+}
+
+.ability-name,
+.ability-type {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 0.25rem;
+  min-height: 2.1rem;
+  padding: 0.2rem 0.35rem;
+  border-right: 1px solid var(--line-soft);
+}
+
+.ability-type {
+  border-right: 1px solid var(--line-soft);
+}
+
+.ability-name span,
+.ability-type span {
+  font-size: 0.74rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.ability-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.35rem;
+}
+
+.ability-resource-marks {
+  display: flex;
+  align-items: center;
+  gap: 0.14rem;
+}
+
+.ability-remove {
+  padding: 0.22rem 0.45rem;
+  font-size: 0.74rem;
+}
+
+.ability-description {
+  padding: 0.2rem 0.25rem 0.3rem;
+}
+
+.ability-description .rte-toolbar {
+  margin-bottom: 0.18rem;
+}
+
+.ability-description .rte-toolbar button {
+  min-width: 1.7rem;
+  padding: 0.18rem 0.32rem;
+  font-size: 0.68rem;
 }
 
 @media (max-width: 1200px) {
@@ -384,35 +607,8 @@ button.danger {
     flex-direction: column;
     align-items: stretch;
   }
-}
 
-@media print {
-  @page {
-    size: landscape;
-    margin: 10mm;
-  }
-
-  body {
-    background: white;
-  }
-
-  .app-shell {
-    padding: 0;
-  }
-
-  .no-print {
-    display: none !important;
-  }
-
-  .sheet-page {
-    box-shadow: none;
-    margin: 0;
-    break-inside: avoid;
-    page-break-inside: avoid;
-  }
-
-  .page-break {
-    break-before: page;
-    page-break-before: always;
+  .ability-list {
+    grid-template-columns: 1fr;
   }
 }

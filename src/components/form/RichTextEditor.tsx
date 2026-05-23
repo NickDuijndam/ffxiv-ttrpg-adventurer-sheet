@@ -34,7 +34,7 @@ export const RichTextEditor = ({
 
   return (
     <div className={`rich-text-wrap ${className ?? ""}`}>
-      <div className="rte-toolbar no-print" role="toolbar" aria-label="Text formatting">
+      <div className="rte-toolbar" role="toolbar" aria-label="Text formatting">
         <button type="button" onClick={() => runCommand("bold")} aria-label="Bold">
           B
         </button>

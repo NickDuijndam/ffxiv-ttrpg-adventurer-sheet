@@ -4,6 +4,23 @@ export interface ItemRow {
   notes: string;
 }
 
+export interface TraitEntry {
+  level: string;
+  name: string;
+  type: string;
+  resourceSlots: number;
+  resources: boolean[];
+  description: string;
+}
+
+export interface AbilityEntry {
+  name: string;
+  type: string;
+  resourceSlots: number;
+  resources: boolean[];
+  description: string;
+}
+
 export interface CharacterSheetData {
   name: string;
   race: string;
@@ -28,12 +45,17 @@ export interface CharacterSheetData {
   hpMax: string;
   barrier: string;
   profile: string;
-  traits: string;
+  traits: TraitEntry[];
   items: ItemRow[];
-  abilities: string;
+  abilities: {
+    primary: AbilityEntry[];
+    secondary: AbilityEntry[];
+    instant: AbilityEntry[];
+  };
 }
 
 export const ITEM_ROW_COUNT = 10;
+export const DEFAULT_TRAIT_COUNT = 3;
 
 export const createDefaultSheetData = (): CharacterSheetData => ({
   name: "",
@@ -59,11 +81,22 @@ export const createDefaultSheetData = (): CharacterSheetData => ({
   hpMax: "",
   barrier: "",
   profile: "",
-  traits: "",
+  traits: Array.from({ length: DEFAULT_TRAIT_COUNT }, () => ({
+    level: "",
+    name: "",
+    type: "",
+    resourceSlots: 0,
+    resources: [],
+    description: ""
+  })),
   items: Array.from({ length: ITEM_ROW_COUNT }, () => ({
     name: "",
     quantity: "",
     notes: ""
   })),
-  abilities: ""
+  abilities: {
+    primary: [],
+    secondary: [],
+    instant: []
+  }
 });

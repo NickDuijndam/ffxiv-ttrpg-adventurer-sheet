@@ -1,6 +1,6 @@
 # FFXIV TTRPG Adventurer Sheet (React + TypeScript + Vite)
 
-Editable, print-ready single-page app inspired by the official blank FFXIV TTRPG adventurer sheet layout.
+Editable single-page app inspired by the official blank FFXIV TTRPG adventurer sheet layout.
 
 ## Tech Stack
 
@@ -16,7 +16,6 @@ Editable, print-ready single-page app inspired by the official blank FFXIV TTRPG
 - Local auto-save with `localStorage`
 - Reset sheet with confirmation
 - JSON export/import
-- Print optimization (`@page` landscape, hidden toolbar controls)
 - Optional dark mode toggle
 - Reusable form and panel components
 
@@ -77,7 +76,7 @@ npm run preview
 
 ## Notes
 
-- Use the top toolbar for print/export/import/reset/dark mode.
+- Use the top toolbar for share/export/import/reset/dark mode.
 - The sheet auto-saves shortly after any edit.
 
 ## GitHub Pages Deployment
