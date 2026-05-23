@@ -1,0 +1,20 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+*.tsbuildinfo
+
+# Local env files
+.env
+.env.*
+!.env.example
+
+# Editor/OS files
+.DS_Store
+Thumbs.db
+.idea/
+*.iml
+
+# Local/static assets not for git
+assets/
